@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Header from "../components/Header";
@@ -55,6 +56,7 @@ export default function RootLayout({
 						</div>
 						<div className="flex justify-center items-center mb-24">
 							{children}
+							<Analytics />
 						</div>
 						<div className="flex justify-center items-center">
 							<Footer />
