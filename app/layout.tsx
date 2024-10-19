@@ -20,10 +20,21 @@ const verdana = localFont({
 	variable: "--font-verdana",
 });
 
+const geistSans = localFont({
+	src: "./fonts/GeistVF.woff",
+	variable: "--font-geist-sans",
+	weight: "100 900",
+});
+const geistMono = localFont({
+	src: "./fonts/GeistMonoVF.woff",
+	variable: "--font-geist-mono",
+	weight: "100 900",
+});
+
 export const metadata: Metadata = {
 	title: "Glix",
 	description: "Reddit stories compiled in one place",
-	icons: "/glix-logo.ico",
+	// icons: "/glix-logo.ico",
 };
 
 export default function RootLayout({
@@ -33,7 +44,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${verdana.variable} antialiased`}>
+			<body
+				className={`${verdana.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+			>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="light"
