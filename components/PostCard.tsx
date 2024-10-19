@@ -28,16 +28,15 @@ const PostCard = ({ post }: IPostCardProps) => {
 		}
 	};
 
-	const updateContentLength = () => {
-		const length = getContentLength();
-		setDisplayContent(
-			post.description
-				? post.description.slice(0, length)
-				: post.excerpt.slice(0, length) + "..."
-		);
-	};
-
 	useEffect(() => {
+		const updateContentLength = () => {
+			const length = getContentLength();
+			setDisplayContent(
+				post.description
+					? post.description.slice(0, length)
+					: post.excerpt.slice(0, length) + "..."
+			);
+		};
 		updateContentLength();
 
 		window.addEventListener("resize", updateContentLength);
@@ -45,7 +44,7 @@ const PostCard = ({ post }: IPostCardProps) => {
 		return () => {
 			window.removeEventListener("resize", updateContentLength);
 		};
-	}, [post.content]);
+	}, [post]);
 
 	const publishDate = getFormattedDate(post.date);
 

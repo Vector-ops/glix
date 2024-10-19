@@ -5,7 +5,7 @@ import PostCard from "@/components/PostCard";
 import React, { useEffect, useState } from "react";
 import { IPost } from "../types";
 
-const page = () => {
+const Page = () => {
 	const [orderedPosts, setOrderedPosts] = useState<IPost[]>();
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ const page = () => {
 		});
 
 		setOrderedPosts(sortedPosts);
-	}, [posts]);
+	}, []);
 
 	return (
 		<div className="flex flex-col justify-center items-center gap-4 w-full m-4 flex-wrap">
@@ -28,4 +28,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default Page;

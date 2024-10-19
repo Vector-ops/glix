@@ -16,16 +16,15 @@ const RecentPostCard = ({ post }: IPostCardProps) => {
 	const [displayContent, setDisplayContent] = useState("");
 	const router = useRouter();
 
-	const updateContentLength = () => {
-		const length = 100;
-		setDisplayContent(
-			post.description
-				? post.description.slice(0, length)
-				: post.excerpt.slice(0, length) + "..."
-		);
-	};
-
 	useEffect(() => {
+		const updateContentLength = () => {
+			const length = 100;
+			setDisplayContent(
+				post.description
+					? post.description.slice(0, length)
+					: post.excerpt.slice(0, length) + "..."
+			);
+		};
 		updateContentLength();
 
 		window.addEventListener("resize", updateContentLength);
@@ -33,7 +32,7 @@ const RecentPostCard = ({ post }: IPostCardProps) => {
 		return () => {
 			window.removeEventListener("resize", updateContentLength);
 		};
-	}, [post.content]);
+	}, [post]);
 
 	const publishDate = getFormattedDate(post.date);
 

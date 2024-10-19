@@ -18,7 +18,7 @@ const Home = () => {
 		});
 
 		setRecentPosts(sortedPosts.slice(0, 6));
-	}, [posts]);
+	}, []);
 
 	return (
 		<div className="flex flex-col justify-center items-center w-full lg:w-[50%] m-4 gap-8">

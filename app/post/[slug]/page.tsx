@@ -19,9 +19,9 @@ const Post = ({ params }: PostProps) => {
 
 	useEffect(() => {
 		setPost(posts.find((post) => post.slug === params.slug));
-	}, [post]);
+	}, [params.slug]);
 
-	const date = getFormattedDate(post?.date!);
+	const date = post && getFormattedDate(post.date);
 
 	return (
 		post && (
@@ -29,7 +29,7 @@ const Post = ({ params }: PostProps) => {
 				<h1 className="text-4xl font-bold text-center">
 					{post?.title}
 				</h1>
-				<Tags tags={post?.tags!} hover />
+				<Tags tags={post?.tags} hover />
 				<p className="text-sm text-gray-900 dark:text-stone-300">
 					{date} - {post?.metadata.readingTime} min read
 				</p>
