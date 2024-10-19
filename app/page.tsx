@@ -25,14 +25,14 @@ const Home = () => {
 			<h1 className="text-4xl font-bold text-red-400">Welcome to Glix</h1>
 			<div className="flex flex-col justify-center items-start gap-4">
 				<div className="flex flex-col justify-center items-center gap-4">
-					<p>
+					<div>
 						Glix is your go-to website for discovering fascinating
 						stories from Reddit! We curate interesting posts that
 						link directly back to the original comments or
 						discussions on Reddit, allowing you to explore deeper
 						and engage with the community.
-					</p>
-					<p>
+					</div>
+					<div>
 						<h2 className="text-lg font-semibold text-red-400">
 							Share Your Favorites
 						</h2>
@@ -42,9 +42,9 @@ const Home = () => {
 						want to hear from you! We are also open to stories that
 						are not on Reddit, so feel free to share any captivating
 						narratives you think should be featured.
-					</p>
+					</div>
 
-					<p>
+					<div>
 						<h2 className="text-lg font-semibold text-red-400">
 							Content Guidelines
 						</h2>
@@ -52,9 +52,9 @@ const Home = () => {
 						content, we focus on stories that are engaging and
 						thought-provoking. Please keep this in mind when
 						submitting links.
-					</p>
+					</div>
 
-					<p>
+					<div>
 						<h2 className="text-lg font-semibold text-red-400">
 							Removal Requests
 						</h2>
@@ -62,9 +62,9 @@ const Home = () => {
 						removed, please contact us with the link, and we will
 						ensure its removal within 24 hours. Your rights as a
 						creator are important to us.
-					</p>
+					</div>
 
-					<p>
+					<div>
 						<h2 className="text-lg font-semibold text-red-400">
 							Privacy Assurance
 						</h2>
@@ -74,9 +74,9 @@ const Home = () => {
 						platform is designed to be a safe space for sharing
 						captivating narratives without any explicit or private
 						content.
-					</p>
+					</div>
 
-					<p>
+					<div>
 						<h2 className="text-lg font-semibold text-red-400">
 							Development Notice
 						</h2>
@@ -84,16 +84,16 @@ const Home = () => {
 						errors are to be expected. We appreciate your
 						understanding as we work to improve the site and enhance
 						your experience.
-					</p>
+					</div>
 
-					<p>
+					<div>
 						<h2 className="text-lg font-semibold text-red-400">
 							Join Us!
 						</h2>
 						Explore our collection of stories and contribute your
 						favorites today. Thank you for being part of the Glix
 						community!
-					</p>
+					</div>
 				</div>
 				<Button />
 			</div>
