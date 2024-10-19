@@ -33,7 +33,3 @@ Rolled up his window, drove away, his daughter waving to me in the rear view. I 
 In the 5 months since I have changed a couple of tires, given a few rides to gas stations and, once, went 50 miles out of my way to get a girl to an airport. I won't accept money. Every time I tell them the same thing when we are through:
 
 "Today you.... tomorrow me."
-
-tl;dr: long rambling story about how the kindness of strangers, particularly folks from south of the border, forced me to be more helpful on the road and in life in general. I am sure it won't be as meaningful to anyone else but it was seriously the highlight of my 2010.
-
-**edit: To the OP, sorry to jack your thread, this has nothing to do with Hitch Hiking. I sort of thought I could just get this off my chest, enjoy the catharsis and watch the story languish at the bottom of the page. Glad people like hearing the tale and I hope it moves you to be more helpful in your day to day. **
