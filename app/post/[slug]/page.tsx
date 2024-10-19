@@ -35,6 +35,7 @@ const Post = ({ params }: PostProps) => {
 				</p>
 				<Link
 					href={post.link}
+					target="_blank"
 					className="text-sm underline hover:text-red-400"
 				>
 					Original Post
