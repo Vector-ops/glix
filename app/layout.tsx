@@ -23,6 +23,7 @@ const verdana = localFont({
 export const metadata: Metadata = {
 	title: "Glix",
 	description: "Reddit stories compiled in one place",
+	icons: "/glix-logo.ico",
 };
 
 export default function RootLayout({
