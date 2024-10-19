@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<div className="sticky top-0 w-full p-4 z-10 transition-colors duration-200 bg-white dark:bg-[#1c1b22] drop-shadow-md rounded-lg">
 			<header className="flex justify-between items-center w-full ">
-				<Link href="/" className="text-xl font-semibold">
+				<Link href="/" className="text-3xl font-bold text-red-400">
 					Glix
 				</Link>
 				<ThemeToggle />

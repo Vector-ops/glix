@@ -33,7 +33,10 @@ const Post = ({ params }: PostProps) => {
 				<p className="text-sm text-gray-900 dark:text-stone-300">
 					{date} - {post?.metadata.readingTime} min read
 				</p>
-				<Link href={post.link} className="text-sm hover:underline">
+				<Link
+					href={post.link}
+					className="text-sm underline hover:text-red-400"
+				>
 					Original Post
 				</Link>
 				<div className="border-t border-gray-300 dark:border-gray-600 w-full"></div>
