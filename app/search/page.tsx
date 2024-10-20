@@ -2,6 +2,7 @@
 import { posts } from "@/.velite";
 import PostCard from "@/components/PostCard";
 import { MagnifyingGlass } from "@phosphor-icons/react";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IPost } from "../types";
 
@@ -12,9 +13,19 @@ enum SearchType {
 }
 
 const Page = () => {
+	const searchParams = useSearchParams();
 	const [type, setType] = useState<SearchType>(SearchType.POST);
 	const [input, setInput] = useState<string>("");
 	const [searchedPosts, setSearchedPosts] = useState<IPost[] | null>(null);
+	let search = searchParams.get("tag");
+
+	useEffect(() => {
+		if (search) {
+			setType(SearchType.TAG);
+			setInput(search);
+		}
+		search = null;
+	}, [search]);
 
 	useEffect(() => {
 		const searchPosts = () => {
@@ -52,7 +63,7 @@ const Page = () => {
 			setSearchedPosts(filteredPosts);
 		};
 		searchPosts();
-	}, [type, input]);
+	}, [type, input, posts]);
 
 	return (
 		<div className="h-full w-full flex flex-col justify-start items-center gap-8 p-4">
@@ -79,9 +90,9 @@ const Page = () => {
 					<option value={SearchType.ALL}>All</option>
 				</select>
 			</div>
-			<div className="flex flex-col justify-center items-center gap-2">
+			<div className="flex flex-col justify-center items-center gap-2 w-full">
 				{searchedPosts && searchedPosts?.length > 0 ? (
-					<div className="flex flex-col justify-center items-center gap-4">
+					<div className="flex flex-col justify-center items-center gap-4 w-full">
 						{searchedPosts.map((post, index) => (
 							<PostCard post={post} key={index} />
 						))}
