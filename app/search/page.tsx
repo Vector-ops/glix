@@ -1,11 +1,8 @@
 "use client";
-
 import { posts } from "@/.velite";
-import Button from "@/components/Button";
 import PostCard from "@/components/PostCard";
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IPost } from "../types";
 
 enum SearchType {
