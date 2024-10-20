@@ -2,12 +2,7 @@ import { PaperPlaneTilt } from "@phosphor-icons/react";
 import Link from "next/link";
 import React from "react";
 
-interface ButtonProps {
-	text?: string;
-	icon?: string;
-}
-
-const Button = ({ text, icon }: ButtonProps) => {
+const Button = () => {
 	return (
 		<div
 			className="w-16 h-10 border border-gray-500 
