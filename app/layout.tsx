@@ -34,7 +34,6 @@ const geistMono = localFont({
 export const metadata: Metadata = {
 	title: "Glix",
 	description: "Reddit stories compiled in one place",
-	// icons: "/glix-logo.ico",
 };
 
 export default function RootLayout({
@@ -49,15 +48,15 @@ export default function RootLayout({
 			>
 				<ThemeProvider
 					attribute="class"
-					defaultTheme="light"
+					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange
 				>
-					<main className="flex flex-col gap-2 w-full">
+					<main className="flex flex-col gap-2 w-full h-screen">
 						<div className="flex justify-center items-center">
 							<Header />
 						</div>
-						<div className="flex justify-center items-center mb-24">
+						<div className="flex flex-1 justify-center items-center ">
 							{children}
 							<Analytics />
 						</div>
