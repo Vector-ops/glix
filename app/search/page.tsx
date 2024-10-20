@@ -3,7 +3,7 @@ import { posts } from "@/.velite";
 import PostCard from "@/components/PostCard";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { IPost } from "../types";
 
 enum SearchType {
@@ -12,19 +12,18 @@ enum SearchType {
 	ALL = "all",
 }
 
-const Page = () => {
+const SearchComponent = () => {
 	const searchParams = useSearchParams();
 	const [type, setType] = useState<SearchType>(SearchType.POST);
 	const [input, setInput] = useState<string>("");
 	const [searchedPosts, setSearchedPosts] = useState<IPost[] | null>(null);
-	let search = searchParams.get("tag");
+	const search = searchParams.get("tag");
 
 	useEffect(() => {
 		if (search) {
 			setType(SearchType.TAG);
 			setInput(search);
 		}
-		search = null;
 	}, [search]);
 
 	useEffect(() => {
@@ -33,7 +32,7 @@ const Page = () => {
 				setSearchedPosts(posts);
 				return;
 			}
-			let filteredPosts = null;
+			let filteredPosts: IPost[] | null = null;
 			switch (type) {
 				case SearchType.POST:
 					filteredPosts = posts.filter((post) =>
@@ -63,7 +62,7 @@ const Page = () => {
 			setSearchedPosts(filteredPosts);
 		};
 		searchPosts();
-	}, [type, input, posts]);
+	}, [type, input]);
 
 	return (
 		<div className="h-full w-full flex flex-col justify-start items-center gap-8 p-4">
@@ -91,7 +90,7 @@ const Page = () => {
 				</select>
 			</div>
 			<div className="flex flex-col justify-center items-center gap-2 w-full">
-				{searchedPosts && searchedPosts?.length > 0 ? (
+				{searchedPosts && searchedPosts.length > 0 ? (
 					<div className="flex flex-col justify-center items-center gap-4 w-full">
 						{searchedPosts.map((post, index) => (
 							<PostCard post={post} key={index} />
@@ -104,6 +103,14 @@ const Page = () => {
 				)}
 			</div>
 		</div>
+	);
+};
+
+const Page = () => {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<SearchComponent />
+		</Suspense>
 	);
 };
 
