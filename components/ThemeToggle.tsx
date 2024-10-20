@@ -17,7 +17,7 @@ export function ThemeToggle() {
 
 	return (
 		<button
-			className="block relative focus:outline-none"
+			className="block relative focus:outline-none hover:text-red-400"
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 		>
 			{theme === "dark" ? (
